@@ -32,7 +32,44 @@ private static int Sumar() {
 
 }
 
+/**
+ * 
+ * @param a 
+ * @param b valor que recibe la 
+ * @return devuelve el resultado de multiplicar los valores
+ * @author gian piero
+ */
+private static double multiplicar(int a, int b)
+{
+	return a*b;
+}
 
+/**
+ * 
+ * @param a
+ * @return Metodo que calcula la raiz cuadrada
+ * @author gian piero
+ */
+private static double raizCuadrada(int a)
+{
+	try {
+		if (a<0)
+			throw new Exception();
+	}
+	catch (Exception e) {
+		System.out.println("Error no se puede hacer la raiz cuadrada de un numero negativo");
+	}
+	return Math.sqrt(a);
+}
 
+/**
+ * 
+ * @param a
+ * @return
+ */
+private static int calcularAbsoluto(int a)
+{
+	return Math.abs(a);
+}
 
 }
