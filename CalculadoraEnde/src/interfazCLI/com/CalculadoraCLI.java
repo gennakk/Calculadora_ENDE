@@ -21,11 +21,110 @@ public class CalculadoraCLI {
 	 * y realziar una operacion sobre ellos
 	 */
 private static void LanzarMenu() {
-	System.out.println("Bienvenido a la calculadora");
-	Sumar(); //debes borrarme
+	int resp;
+	do{
+		System.out.println("Bienvenido a la calculadora");
+		System.out.println("1-SUMAR");
+		System.out.println("2-RESTAR");
+		System.out.println("3-MULTIPLICAR");
+		System.out.println("4-DIVIDIR");
+		System.out.println("5-RAIZ CUADRADA");
+		System.out.println("6-BINARIO");
+		System.out.println("7-VALOR ABSOLUTO");
+		System.out.println("8-LOGARITMO");
+		System.out.println("9- ");
+		System.out.println("10-SALIR ");
+		resp = Consola.leeInt();
+		if (resp==1)
+		{
+			System.out.println("Introduce valor para a");
+			int a = Consola.leeInt();
+			System.out.println("Introduce valor para b");
+			int b = Consola.leeInt();
+			System.out.println("El resultado es" +  multiplicar(a,b));
+		}
+		else
+		{
+			if (resp==2)
+			{
+				System.out.println("Introduce valor para a");
+				int a = Consola.leeInt();
+				System.out.println("Introduce valor para b");
+				int b = Consola.leeInt();
+				System.out.println("El resultado es" +  multiplicar(a,b));
+			}
+			else
+			{
+				if (resp==3)
+				{
+					System.out.println("Introduce valor para a");
+					int a = Consola.leeInt();
+					System.out.println("Introduce valor para b");
+					int b = Consola.leeInt();
+					System.out.println("El resultado es" +  multiplicar(a,b));
+				}
+				else
+				{
+					if (resp==4)
+					{
+						System.out.println("Introduce valor para a");
+						int a = Consola.leeInt();
+						System.out.println("Introduce valor para b");
+						int b = Consola.leeInt();
+						System.out.println("El resultado es" +  multiplicar(a,b));
+					}
+					else
+					{
+						if (resp==5)
+						{
+							System.out.println("Introduce valor para a");
+							int a = Consola.leeInt();
+							System.out.println("El resultado es" +  raizCuadrada(a));
+						}
+						else
+						{
+							if (resp==6)
+							{
+								System.out.println("Introduce valor para a");
+								int a = Consola.leeInt();
+								System.out.println("El resultado es" +  valorAbsoluto(a));
+							}
+							else
+							{
+								if (resp==6)
+								{
+									System.out.println("Introduce valor para a");
+									int a = Consola.leeInt();
+									System.out.println("El resultado es" +  valorAbsoluto(a));
+								}
+								else
+								{
+									if (resp==7)
+									{
+										System.out.println("Introduce valor para a");
+										int a = Consola.leeInt();
+										System.out.println("El resultado es" +  valorAbsoluto(a));
+									}
+									else
+									{
+										if (resp==8)
+										{
+											System.out.println("Introduce valor para a");
+											int a = Consola.leeInt();
+											System.out.println("El resultado es" +  (a));
+										}
+										
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}while(resp!=10);
+
 }
-
-
 private static int Sumar() {
 	System.out.println("Yo sumo dos operadores");
 	return 0;
@@ -33,9 +132,9 @@ private static int Sumar() {
 }
 
 /**
- * 
- * @param a 
- * @param b valor que recibe la 
+ * Metodo que recibe 2 valores y realiza el producto de estos mismos
+ * @param a valor que recibe el parametro
+ * @param b valor que recibe el parametro
  * @return devuelve el resultado de multiplicar los valores
  * @author gian piero
  */
@@ -45,11 +144,14 @@ private static double multiplicar(int a, int b)
 }
 
 /**
+ * Metodo que recibe un numero y calcula su raiz cuadrada o saca un mensaje de error en caso
+ * de no poder hacerlo
  * 
- * @param a
+ * @param valor que recibe el parametro
  * @return Metodo que calcula la raiz cuadrada
  * @author gian piero
  */
+
 private static double raizCuadrada(int a)
 {
 	try {
@@ -63,11 +165,11 @@ private static double raizCuadrada(int a)
 }
 
 /**
- * 
- * @param a
- * @return
+ * Metodo que recibe un numero y devuelve el valor absoluto de este
+ * @param valor que recibe el parametro
+ * @return devuelve el resultado de calcular el valor absoluto
  */
-private static int calcularAbsoluto(int a)
+private static int valorAbsoluto(int a)
 {
 	return Math.abs(a);
 }
