@@ -27,7 +27,6 @@ public class CalculadoraCLI {
 	 * y realziar una operacion sobre ellos
 	 */
 private static void LanzarMenu() {
-
 	/*
 	int resp;
 	do{
