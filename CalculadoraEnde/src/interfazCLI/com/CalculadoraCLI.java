@@ -9,25 +9,30 @@ public class CalculadoraCLI {
 	
 /**
  * Es el programa principal de linea de comandos
- * nuestra labor ser√° extraer los m√©todos que haga falta y 
- * en la medida de lo posible pasarlo a interfaz gr√°fico
+ * nuestra labor ser· extraer los mÈtodos que haga falta y 
+ * en la medida de lo posible pasarlo a interfaz gr·fico
  * o al menos tenerlo funcionando
  * @param args
  */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		LanzarMenu();
+		try {
+			LanzarMenu();
+		} catch (ErrorDivision0 e) {
+			e.getMessage();
+		}
 
 	}
 
 	
 	/**
-	 * Muestra un men√∫ de linea de comando con diferentes opciones
+	 * Muestra un men˙ de linea de comando con diferentes opciones
 	 * como son meter un operador A, un operador B
-	 * y realziar una operacion sobre ellos
+	 * y realiziar una operacion sobre ellos
 	 */
-private static void LanzarMenu() {
-	/*
+private static void LanzarMenu() throws ErrorDivision0 {
+
+	int a=0;
+	int b=0;
 	int resp;
 	do{
 		System.out.println("Bienvenido a la calculadora");
@@ -39,98 +44,94 @@ private static void LanzarMenu() {
 		System.out.println("6-BINARIO");
 		System.out.println("7-VALOR ABSOLUTO");
 		System.out.println("8-LOGARITMO");
-		System.out.println("9- ");
+		System.out.println("9-FACTORIAL");
 		System.out.println("10-SALIR ");
 		resp = Consola.leeInt();
-		if (resp==1)
-		{
+		switch (resp) {
+		case 1:
+			
 			System.out.println("Introduce valor para a");
-			int a = Consola.leeInt();
+			a = Consola.leeInt();
 			System.out.println("Introduce valor para b");
-			int b = Consola.leeInt();
-			System.out.println("El resultado es" +  multiplicar(a,b));
-		}
-		else
-		{
-			if (resp==2)
-			{
-				System.out.println("Introduce valor para a");
-				int a = Consola.leeInt();
-				System.out.println("Introduce valor para b");
-				int b = Consola.leeInt();
-				System.out.println("El resultado es" +  multiplicar(a,b));
+			b = Consola.leeInt();
+			System.out.println("El resultado es" +  Sumar(a,b));
+			break;
+		case 2:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("Introduce valor para b");
+			b = Consola.leeInt();
+			System.out.println("El resultado es" +  Restar(a,b));
+			break;	
+		
+		case 3:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("Introduce valor para b");
+			b = Consola.leeInt();
+			System.out.println("El resultado es" +  Multiplicar(a,b));
+			break;	
+		
+		case 4:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("Introduce valor para b");
+			b = Consola.leeInt();
+			try {
+				System.out.println("El resultado es" +  Dividir(a,b));
 			}
-			else
-			{
-				if (resp==3)
-				{
-					System.out.println("Introduce valor para a");
-					int a = Consola.leeInt();
-					System.out.println("Introduce valor para b");
-					int b = Consola.leeInt();
-					System.out.println("El resultado es" +  multiplicar(a,b));
-				}
-				else
-				{
-					if (resp==4)
-					{
-						System.out.println("Introduce valor para a");
-						int a = Consola.leeInt();
-						System.out.println("Introduce valor para b");
-						int b = Consola.leeInt();
-						System.out.println("El resultado es" +  multiplicar(a,b));
-					}
-					else
-					{
-						if (resp==5)
-						{
-							System.out.println("Introduce valor para a");
-							int a = Consola.leeInt();
-							System.out.println("El resultado es" +  raizCuadrada(a));
-						}
-						else
-						{
-							if (resp==6)
-							{
-								System.out.println("Introduce valor para a");
-								int a = Consola.leeInt();
-								System.out.println("El resultado es" +  valorAbsoluto(a));
-							}
-							else
-							{
-								if (resp==6)
-								{
-									System.out.println("Introduce valor para a");
-									int a = Consola.leeInt();
-									System.out.println("El resultado es" +  valorAbsoluto(a));
-								}
-								else
-								{
-									if (resp==7)
-									{
-										System.out.println("Introduce valor para a");
-										int a = Consola.leeInt();
-										System.out.println("El resultado es" +  valorAbsoluto(a));
-									}
-									else
-									{
-										if (resp==8)
-										{
-											System.out.println("Introduce valor para a");
-											int a = Consola.leeInt();
-											System.out.println("El resultado es" +  (a));
-										}
-										
-									}
-								}
-							}
-						}
-					}
-				}
+			catch (ErrorDivision0 e) {
+				System.err.println(e.getMessage());
 			}
+			break;	
+		
+		case 5:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("El resultado es" +  RaizCuadrada(a));
+			break;	
+			
+		case 6:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("El resultado es" +  Binario(a));
+			break;	
+			
+		case 7:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("El resultado es" +  Absoluto(a));
+			break;	
+			
+			
+		case 8:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("Introduce valor para b");
+			b = Consola.leeInt();
+			System.out.println("El resultado es" +  Logaritmo(a,b));
+			break;	
+			
+		case 9:
+			
+			System.out.println("Introduce valor para a");
+			a = Consola.leeInt();
+			System.out.println("Introduce valor para b");
+			b = Consola.leeInt();
+			System.out.println("El resultado es" +  Factorial(a));
+			break;		
+		default:
+			resp=10;
+			break;
 		}
 	}while(resp!=10);
-	*/
 }
 /**
  * Metodo que eleva un n a la m
@@ -146,7 +147,9 @@ public static double Elevar(double n, double m)
  * Metodo que calcula la raiz cuadrada de n
  * @author gian piero
  */
-private static double raizCuadrada(double n)
+	//falta el @return, como javadoc no est· completo
+	
+public static double RaizCuadrada(double n)
 {
 	try {
 		if (n<0)
@@ -162,13 +165,13 @@ private static double raizCuadrada(double n)
  * Metodo que calcula el valor absoluto de n
  * @author gian piero
  */
-public static double absoluto(double n)
+public static double Absoluto(double n)
 {
 	return Math.abs(n);
 }
   
  /**
- * Realiza la suma entre dos n√∫meros
+ * Realiza la suma entre dos n˙meros
  * @author Rodrigo
  */
 public static double Sumar(double n,double m) {
@@ -178,7 +181,27 @@ public static double Sumar(double n,double m) {
 }
 
 /**
- * Realiza la divisi√≥n entre dos n√∫meros.
+* Realiza la resta entre dos n˙meros
+* @author Rodrigo
+*/
+public static double Restar(double n,double m) {
+	System.out.println("Yo resto dos operadores");
+	return n-m;
+
+}
+
+/**
+* Realiza la multiplicacion entre dos n˙meros
+* @author Rodrigo
+*/
+public static double Multiplicar(double n,double m) {
+	System.out.println("Yo multiplico dos operadores");
+	return n*m;
+
+}
+
+/**
+ * Realiza la divisiÛn entre dos n˙meros.
  * Lanza excepcion cuando el divisor es 0
  * @author Rodrigo
  */
@@ -205,16 +228,11 @@ public static double Logaritmo(double n,double m) {
 }
 
 
-
-
-
-
-
 /**
  * Metodo que calcula el binario absoluto de n
  * @author gian piero
  */
-public static double binario(double n)
+public static double Binario(double n)
 {
 	return  Double.parseDouble(Integer.toBinaryString((int)n)) ;
 }
@@ -224,14 +242,13 @@ public static double binario(double n)
  * Metodo que calcula el factorial de n
  * @author gian piero
  */
-public static double factorial(double n)
+public static double Factorial(double n)
 {
 	int i=1;
 	for (int cont=(int) n; cont>0; cont--)
 	{
 		i*=cont;
 	}
-	
 	return i;
 }
 
