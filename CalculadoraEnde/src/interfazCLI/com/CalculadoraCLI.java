@@ -3,10 +3,14 @@ package interfazCLI.com;
 import java.util.function.BinaryOperator;
 
 public class CalculadoraCLI {
+	
+	
+	
+	
 /**
  * Es el programa principal de linea de comandos
- * nuestra labor ser· extraer los mÈtodos que haga falta y 
- * en la medida de lo posible pasarlo a interfaz gr·fico
+ * nuestra labor ser√° extraer los m√©todos que haga falta y 
+ * en la medida de lo posible pasarlo a interfaz gr√°fico
  * o al menos tenerlo funcionando
  * @param args
  */
@@ -18,11 +22,12 @@ public class CalculadoraCLI {
 
 	
 	/**
-	 * Muestra un men˙ de linea de comando con diferentes opciones
+	 * Muestra un men√∫ de linea de comando con diferentes opciones
 	 * como son meter un operador A, un operador B
 	 * y realziar una operacion sobre ellos
 	 */
 private static void LanzarMenu() {
+
 	/*
 	int resp;
 	do{
@@ -162,6 +167,47 @@ public static double absoluto(double n)
 {
 	return Math.abs(n);
 }
+  
+ /**
+ * Realiza la suma entre dos n√∫meros
+ * @author Rodrigo
+ */
+public static double Sumar(double n,double m) {
+	System.out.println("Yo sumo dos operadores");
+	return n+m;
+
+}
+
+/**
+ * Realiza la divisi√≥n entre dos n√∫meros.
+ * Lanza excepcion cuando el divisor es 0
+ * @author Rodrigo
+ */
+public static double Dividir(double n,double m) throws ErrorDivision0{
+	System.out.println("Yo divido dos operadores");
+	
+		if(m==0)
+			throw new ErrorDivision0("Division por 0.");
+		return n/m;	
+
+}
+
+/**
+ * Realiza el logaritmo de n con base m
+ *
+ * @author Rodrigo
+ */
+public static double Logaritmo(double n,double m) {
+	
+	System.out.println("Yo hago el logaritmo de dos operadores");
+	
+	return Math.log(n) / Math.log(m);
+	
+}
+
+
+
+
 
 
 
