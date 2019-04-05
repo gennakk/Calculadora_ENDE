@@ -148,7 +148,7 @@ public static double Elevar(double n, double m)
  * Metodo que calcula la raiz cuadrada de n
  * @author gian piero
  */
-private static double raizCuadrada(double n)
+public static double raizCuadrada(double n)
 {
 	try {
 		if (n<0)

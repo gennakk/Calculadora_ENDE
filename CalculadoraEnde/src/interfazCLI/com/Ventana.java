@@ -83,6 +83,7 @@ public class Ventana extends JFrame {
 		aniadirBotonesNumeros(4,6,fila3);
 		aniadirBotonOperacion("-",fila3);
 		aniadirBotonOperacion("/",fila3);
+		aniadirBotonOperacion("!",fila3);
 		
 		this.getContentPane().add(fila3);
 		
@@ -105,6 +106,7 @@ public class Ventana extends JFrame {
 		aniadirBotonOperacion("^",fila5);
 		aniadirBotonOperacion("log",fila5);
 		aniadirBotonOperacion("bin",fila5);
+		
 						
 		this.getContentPane().add(fila5);
 		
@@ -152,6 +154,8 @@ public class Ventana extends JFrame {
 		crearBotonOperacion("log");
 		//binario
 		crearBotonOperacion("bin");
+		//factorial
+		crearBotonOperacion("!");
 		
 		
 		
@@ -279,15 +283,23 @@ public class Ventana extends JFrame {
 
 			
 		case "^":
-			break;
+			return CalculadoraCLI.Elevar(num1,num2);
 			
 		case "log":
 			
 			return CalculadoraCLI.Logaritmo(num1,num2);
-
+			
+		case "bin":
+			
+			return CalculadoraCLI.binario(num1);
 		
+		case "sqr":
+			
+			return CalculadoraCLI.raizCuadrada(num1);
 		
-		
+		case "!":
+			
+			return CalculadoraCLI.factorial(num1);
 		}
 		
 		return 0.0;
