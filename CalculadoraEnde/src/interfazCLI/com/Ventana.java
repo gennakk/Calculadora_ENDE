@@ -94,6 +94,7 @@ public class Ventana extends JFrame {
 		aniadirBotonesNumeros(1,3,fila4);
 		aniadirBotonOperacion("x",fila4);
 		aniadirBotonOperacion("sqr",fila4);
+		aniadirBotonOperacion("abs", fila4);
 				
 		this.getContentPane().add(fila4);
 		
@@ -156,7 +157,8 @@ public class Ventana extends JFrame {
 		crearBotonOperacion("bin");
 		//factorial
 		crearBotonOperacion("!");
-		
+		//absoluto
+		crearBotonOperacion("abs");
 		
 		
 	}
@@ -259,8 +261,12 @@ public class Ventana extends JFrame {
 		String[] arrayoperacion = separar();
 		
 		double num1 = Double.parseDouble(arrayoperacion[0]);
+		double num2=0;
 		
-		double num2 = Double.parseDouble(arrayoperacion[2]);
+
+		
+		if(!arrayoperacion[2].equals(" "))
+			num2 = Double.parseDouble(arrayoperacion[2]);
 		
 		switch (arrayoperacion[1]) {
 		
@@ -300,6 +306,11 @@ public class Ventana extends JFrame {
 		case "!":
 			
 			return CalculadoraCLI.factorial(num1);
+		
+		case "abs":
+
+			return CalculadoraCLI.absoluto(num1);
+			
 		}
 		
 		return 0.0;
@@ -315,12 +326,31 @@ public class Ventana extends JFrame {
 	private String[] separar() {
 		
 		String instruccion = pantalla.getText();
+		String primnum;
 		
-		String primnum = instruccion.substring(0, instruccion.indexOf(' '));
+		if(instruccion.charAt(0) == ' ')
+			primnum="0";
+		else {
+			primnum=instruccion.substring(0,instruccion.indexOf(' ')); 
+		}
+		String operacion=instruccion.substring(instruccion.indexOf(' ')+1,instruccion.indexOf(' ',instruccion.indexOf(' ')+1));;
+		String segnum;
 		
-		String operacion = instruccion.substring(instruccion.indexOf(' ')+1,instruccion.indexOf(' ')+2);
 		
-		String segnum = instruccion.substring(instruccion.indexOf(' ')+3, instruccion.length());
+		
+		if(instruccion.length()==instruccion.indexOf(operacion+1)) {
+			
+	
+			segnum=" ";
+			
+		}else {
+			
+		
+			
+				segnum = instruccion.substring(instruccion.indexOf(' ',instruccion.indexOf(' ')+1), instruccion.length());
+			
+			
+		}
 		
 		
 		String[] arrayoperacion = {primnum,operacion,segnum};
