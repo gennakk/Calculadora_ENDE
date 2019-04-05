@@ -44,6 +44,9 @@ private static void LanzarMenu() {
 		System.out.println("9- ");
 		System.out.println("10-SALIR ");
 		resp = Consola.leeInt();
+		
+		// MEJOR CON UN CASE
+		
 		if (resp==1)
 		{
 			System.out.println("Introduce valor para a");
@@ -148,6 +151,8 @@ public static double Elevar(double n, double m)
  * Metodo que calcula la raiz cuadrada de n
  * @author gian piero
  */
+	//falta el @return, como javadoc no está completo
+	
 public static double raizCuadrada(double n)
 {
 	try {
