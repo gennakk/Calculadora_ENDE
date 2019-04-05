@@ -1,5 +1,7 @@
 package interfazCLI.com;
 
+import java.util.function.BinaryOperator;
+
 public class CalculadoraCLI {
 /**
  * Es el programa principal de linea de comandos
@@ -21,6 +23,7 @@ public class CalculadoraCLI {
 	 * y realziar una operacion sobre ellos
 	 */
 private static void LanzarMenu() {
+	/*
 	int resp;
 	do{
 		System.out.println("Bienvenido a la calculadora");
@@ -123,55 +126,68 @@ private static void LanzarMenu() {
 			}
 		}
 	}while(resp!=10);
-
+	*/
 }
-private static int Sumar() {
-	System.out.println("Yo sumo dos operadores");
-	return 0;
-
-}
-
 /**
- * Metodo que recibe 2 valores y realiza el producto de estos mismos
- * @param a valor que recibe el parametro
- * @param b valor que recibe el parametro
- * @return devuelve el resultado de multiplicar los valores
+ * Metodo que eleva un n a la m
  * @author gian piero
  */
-private static double multiplicar(int a, int b)
+public static double Elevar(double n, double m)
 {
-	return a*b;
+	return Math.pow(n, m);
 }
 
+
 /**
- * Metodo que recibe un numero y calcula su raiz cuadrada o saca un mensaje de error en caso
- * de no poder hacerlo
- * 
- * @param valor que recibe el parametro
- * @return Metodo que calcula la raiz cuadrada
+ * Metodo que calcula la raiz cuadrada de n
  * @author gian piero
  */
-
-private static double raizCuadrada(int a)
+private static double raizCuadrada(double n)
 {
 	try {
-		if (a<0)
+		if (n<0)
 			throw new Exception();
 	}
 	catch (Exception e) {
 		System.out.println("Error no se puede hacer la raiz cuadrada de un numero negativo");
 	}
-	return Math.sqrt(a);
+	return Math.sqrt(n);
 }
 
 /**
- * Metodo que recibe un numero y devuelve el valor absoluto de este
- * @param valor que recibe el parametro
- * @return devuelve el resultado de calcular el valor absoluto
+ * Metodo que calcula el valor absoluto de n
+ * @author gian piero
  */
-private static int valorAbsoluto(int a)
+public static double absoluto(double n)
 {
-	return Math.abs(a);
+	return Math.abs(n);
+}
+
+
+
+/**
+ * Metodo que calcula el binario absoluto de n
+ * @author gian piero
+ */
+public static double binario(double n)
+{
+	return  Double.parseDouble(Integer.toBinaryString((int)n)) ;
+}
+
+
+/**
+ * Metodo que calcula el factorial de n
+ * @author gian piero
+ */
+public static double factorial(double n)
+{
+	int i=1;
+	for (int cont=(int) n; cont>0; cont--)
+	{
+		i*=cont;
+	}
+	
+	return i;
 }
 
 }
