@@ -42,6 +42,26 @@ public static double Sumar(double n,double m) {
 }
 
 /**
+ * Realiza la resta entre dos números
+ * @author Rodrigo
+ */
+public static double Restar(double n,double m) {
+	System.out.println("Yo resto dos operadores");
+	return n-m;
+
+}
+
+/**
+ * Realiza la multiplicacion entre dos números
+ * @author Rodrigo
+ */
+public static double Multiplicar(double n,double m) {
+	System.out.println("Yo multiplico dos operadores");
+	return n*m;
+
+}
+
+/**
  * Realiza la división entre dos números.
  * Lanza excepcion cuando el divisor es 0
  * @author Rodrigo
@@ -55,6 +75,7 @@ public static double Dividir(double n,double m) throws ErrorDivision0{
 
 	
 }
+
 
 /**
  * Realiza el logaritmo de n con base m

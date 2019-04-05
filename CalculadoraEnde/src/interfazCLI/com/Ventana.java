@@ -267,11 +267,11 @@ public class Ventana extends JFrame {
 			
 		case "-":
 			
+			return CalculadoraCLI.Restar(num1,num2);
 			
-			break;
 			
 		case "x":
-			break;
+			return CalculadoraCLI.Multiplicar(num1,num2);
 			
 		case "/":
 			
