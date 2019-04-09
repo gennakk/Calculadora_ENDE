@@ -3,15 +3,17 @@ package interfazCLI.com;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.DisplayName;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 /**
- * Clase de JUNIT creada para hacer pruebas sobre los métodos que vamos creando
- * Ningún método será dado por válido hasta que no tenga su JUNIT correspondiente 
- * con dos pruebas como mínimo 
+ * Clase de JUNIT creada para hacer pruebas sobre los mÃ©todos que vamos creando
+ * NingÃºn mÃ©todo serÃ¡ dado por vÃ¡lido hasta que no tenga su JUNIT correspondiente 
+ * con dos pruebas como mÃ­nimo 
  * @author israel
  *
  */
@@ -19,7 +21,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 class CalculadoraCLITest {
 	
 	/**
-	 * Test número 1 sobre el método suma
+	 * Test nÃºmero 1 sobre el mÃ©todo suma
 	 * @author Rodrigo
 	 *
 	 */
@@ -32,7 +34,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 2 sobre el método suma, fallo
+	 * Test nÃºmero 2 sobre el mÃ©todo suma, fallo
 	 * @author Rodrigo
 	 *
 	 */
@@ -44,7 +46,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método resta
+	 * Test nÃºmero 1 sobre el mÃ©todo resta
 	 * @author gian piero
 	 *
 	 */
@@ -56,7 +58,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método resta, fallo
+	 * Test nÃºmero 1 sobre el mÃ©todo resta, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -68,7 +70,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método dividir
+	 * Test nÃºmero 1 sobre el mÃ©todo dividir
 	 * @author Rodrigo
 	 *
 	 */
@@ -88,7 +90,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 2 sobre el método dividir, fallo
+	 * Test nÃºmero 2 sobre el mÃ©todo dividir, fallo
 	 * @author Rodrigo
 	 *
 	 */
@@ -104,7 +106,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método elevar
+	 * Test nÃºmero 1 sobre el mÃ©todo elevar
 	 * @author gian piero
 	 *
 	 */
@@ -115,7 +117,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 2 sobre el método elevar, fallo
+	 * Test nÃºmero 2 sobre el mÃ©todo elevar, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -141,7 +143,7 @@ class CalculadoraCLITest {
 	
 
 	/**
-	 * Test número 1 sobre el método multiplicar
+	 * Test nÃºmero 1 sobre el mÃ©todo multiplicar
 	 * @author gian piero
 	 *
 	 */
@@ -152,7 +154,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 2 sobre el método multiplicar, fallo
+	 * Test nÃºmero 2 sobre el mÃ©todo multiplicar, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -163,9 +165,10 @@ class CalculadoraCLITest {
 	}
 	
 	
+
 	
 	/**
-	 * Test número 1 sobre el método raiz cuadrada
+	 * Test nÃºmero 1 sobre el mÃ©todo raiz cuadrada
 	 * @author gian piero
 	 *
 	 */
@@ -176,7 +179,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 2 sobre el método raiz cuadrada, fallo
+	 * Test nÃºmero 2 sobre el mÃ©todo raiz cuadrada, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -189,7 +192,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 1 sobre el método binario
+	 * Test nÃºmero 1 sobre el mÃ©todo binario
 	 * @author gian piero
 	 *
 	 */
@@ -200,7 +203,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método binario, fallo
+	 * Test nÃºmero 1 sobre el mÃ©todo binario, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -215,7 +218,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 1 sobre el método calcular valor absoluto
+	 * Test nÃºmero 1 sobre el mÃ©todo calcular valor absoluto
 	 * @author gian piero
 	 *
 	 */
@@ -226,7 +229,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 *  Test número 1 sobre el método calcular valor absoluto, fallo
+	 *  Test nÃºmero 1 sobre el mÃ©todo calcular valor absoluto, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -240,7 +243,70 @@ class CalculadoraCLITest {
 	
 
 	/**
-	 * Test número 1 sobre el método calcular el logaritmo
+	 * Test nÃºmero 1 sobre el mÃ©todo suma
+	 * @author Rodrigo
+	 *
+	 */
+	@Test
+	void testSumar1() {
+		double solucion = CalculadoraCLI.Sumar(2.0,1.0);
+		
+		assertEquals(3.0, solucion);
+	}
+	
+	
+	/**
+	 * Test nÃºmero 2 sobre el mÃ©todo suma, fallo
+	 * @author Rodrigo
+	 *
+	 */
+	@Test
+	void testSumar2() {
+		double solucion = CalculadoraCLI.Sumar(3.0,1.0);
+		
+		assertEquals(3.0, solucion);
+	}
+	
+	/**
+	 * Test nÃºmero 1 sobre el mÃ©todo dividir
+	 * @author Rodrigo
+	 *
+	 */
+	@Test
+	void testDividir1() {
+		double solucion;
+		try {
+			solucion = CalculadoraCLI.Dividir(2.0,1.0);
+			assertEquals(3.0, solucion);
+		} catch (ErrorDivision0 e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	/**
+	 * Test nÃºmero 2 sobre el mÃ©todo dividir, fallo
+	 * @author Rodrigo
+	 *
+	 */
+	@Test
+	void testDividir2() {
+		
+		try {
+			assertEquals("Division por 0.", CalculadoraCLI.Dividir(3.0,0));
+		} catch (ErrorDivision0 e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+
+
+	/**
+	 * Test nÃºmero 1 sobre el mÃ©todo calcular el logaritmo
 	 * @author gian piero
 	 *
 	 */
@@ -251,7 +317,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 *  Test número 1 sobre el método calcular  el logaritmo, fallo
+	 *  Test nÃºmero 1 sobre el mÃ©todo calcular  el logaritmo, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -265,7 +331,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 1 sobre el método calcular el factorial
+	 * Test nÃºmero 1 sobre el mÃ©todo calcular el factorial
 	 * @author gian piero
 	 *
 	 */
@@ -276,7 +342,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 *  Test número 1 sobre el método calcular  el factorial, fallo
+	 *  Test nÃºmero 1 sobre el mÃ©todo calcular  el factorial, fallo
 	 * @author gian piero
 	 *
 	 */

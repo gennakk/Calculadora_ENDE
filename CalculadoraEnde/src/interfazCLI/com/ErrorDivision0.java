@@ -1,3 +1,4 @@
+
 package interfazCLI.com;
 
 public class ErrorDivision0 extends Exception {
@@ -7,3 +8,4 @@ public class ErrorDivision0 extends Exception {
 	}
 
 }
+

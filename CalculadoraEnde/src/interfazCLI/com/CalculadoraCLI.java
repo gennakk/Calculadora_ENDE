@@ -1,3 +1,4 @@
+
 package interfazCLI.com;
 
 import java.util.function.BinaryOperator;
@@ -9,8 +10,8 @@ public class CalculadoraCLI {
 	
 /**
  * Es el programa principal de linea de comandos
- * nuestra labor será extraer los métodos que haga falta y 
- * en la medida de lo posible pasarlo a interfaz gráfico
+ * nuestra labor serï¿½ extraer los mï¿½todos que haga falta y 
+ * en la medida de lo posible pasarlo a interfaz grï¿½fico
  * o al menos tenerlo funcionando
  * @param args
  */
@@ -25,7 +26,7 @@ public class CalculadoraCLI {
 
 	
 	/**
-	 * Muestra un menú de linea de comando con diferentes opciones
+	 * Muestra un menï¿½ de linea de comando con diferentes opciones
 	 * como son meter un operador A, un operador B
 	 * y realiziar una operacion sobre ellos
 	 */
@@ -176,7 +177,7 @@ public static double Absoluto(double n)
 }
   
  /**
- * Realiza la suma entre dos números
+ * Realiza la suma entre dos nï¿½meros
  * @author Rodrigo
  * @param n numero que se sumara a m
  * @param m numero que se sumara a n
@@ -189,7 +190,7 @@ public static double Sumar(double n,double m) {
 }
 
 /**
-* Realiza la resta entre dos números
+* Realiza la resta entre dos nï¿½meros
 * @author Rodrigo
 * @param n numero al que se le restara m
 * @param m numero que sera restado a n
@@ -202,7 +203,7 @@ public static double Restar(double n,double m) {
 }
 
 /**
-* Realiza la multiplicacion entre dos números
+* Realiza la multiplicacion entre dos nï¿½meros
 * @author Rodrigo
 * @param n numero que se multiplicara por m
 * @param m numero que se multiplicara por n
@@ -215,7 +216,7 @@ public static double Multiplicar(double n,double m) {
 }
 
 /**
- * Realiza la división entre dos números.
+ * Realiza la divisiï¿½n entre dos nï¿½meros.
  * Lanza excepcion cuando el divisor es 0
  * @author Rodrigo
  * @param n dividendo
