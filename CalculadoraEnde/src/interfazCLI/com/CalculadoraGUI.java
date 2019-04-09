@@ -1,6 +1,8 @@
 package interfazCLI.com;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,8 +33,7 @@ public class CalculadoraGUI extends JFrame {
 		dibujarVentana();
 		
 		pack();
-		
-		
+		setSize(400, 450);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
@@ -56,8 +57,9 @@ public class CalculadoraGUI extends JFrame {
 		
 		pantalla = new JTextArea();
 		
-		pantalla.setPreferredSize(new Dimension(200,200));
-		
+		pantalla.setPreferredSize(new Dimension(370,200));
+		pantalla.setFont(new Font("Arial", Font.BOLD, 70));
+		pantalla.setBackground(Color.lightGray);
 		pantalla.setEditable(false);
 		
 		
@@ -167,7 +169,7 @@ public class CalculadoraGUI extends JFrame {
 		hashBotones.put(simbolo, new JButton(" "+simbolo+" "));
 		
 		hashBotones.get(simbolo).addActionListener(new ListenerBoton(simbolo));
-		
+		hashBotones.get(simbolo).setPreferredSize(new Dimension(70,50));
 	}
 	
 	/**
@@ -178,6 +180,7 @@ public class CalculadoraGUI extends JFrame {
 		
 		for(int i=desde;i<=hasta;i++) {
 			fila.add(hashBotones.get(Integer.toString(i)));
+			hashBotones.get(Integer.toString(i)).setPreferredSize(new Dimension(70, 50));
 		}
 				
 	}
