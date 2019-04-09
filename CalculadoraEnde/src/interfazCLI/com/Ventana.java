@@ -297,19 +297,19 @@ public class Ventana extends JFrame {
 			
 		case "bin":
 			
-			return CalculadoraCLI.binario(num1);
+			return CalculadoraCLI.Binario(num1);
 		
 		case "sqr":
 			
-			return CalculadoraCLI.raizCuadrada(num1);
+			return CalculadoraCLI.RaizCuadrada(num1);
 		
 		case "!":
 			
-			return CalculadoraCLI.factorial(num1);
+			return CalculadoraCLI.Factorial(num1);
 		
 		case "abs":
 
-			return CalculadoraCLI.absoluto(num1);
+			return CalculadoraCLI.Absoluto(num1);
 			
 		}
 		

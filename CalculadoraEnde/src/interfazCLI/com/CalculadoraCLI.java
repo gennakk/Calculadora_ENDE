@@ -10,9 +10,7 @@ public class CalculadoraCLI {
 	
 /**
  * Es el programa principal de linea de comandos
- * nuestra labor ser� extraer los m�todos que haga falta y 
- * en la medida de lo posible pasarlo a interfaz gr�fico
- * o al menos tenerlo funcionando
+ * su labor es extraer los metodos que se necesite.
  * @param args
  */
 	public static void main(String[] args) {
@@ -26,15 +24,16 @@ public class CalculadoraCLI {
 
 	
 	/**
-	 * Muestra un men� de linea de comando con diferentes opciones
+	 * Muestra un menu de linea de comando con diferentes opciones
 	 * como son meter un operador A, un operador B
-	 * y realiziar una operacion sobre ellos
+	 * y realizar una operacion sobre ellos
 	 */
 private static void LanzarMenu() throws ErrorDivision0 {
 
 	int a=0;
 	int b=0;
 	int resp;
+	int[] array;
 	do{
 		System.out.println("Bienvenido a la calculadora");
 		System.out.println("1-SUMAR");
@@ -51,38 +50,26 @@ private static void LanzarMenu() throws ErrorDivision0 {
 		switch (resp) {
 		case 1:
 			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("Introduce valor para b");
-			b = Consola.leeInt();
-			System.out.println("El resultado es" +  Sumar(a,b));
+			array = pedir2numeros();
+			System.out.println("El resultado es" +  Sumar(array[0],array[1]));
 			break;
 		case 2:
 			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("Introduce valor para b");
-			b = Consola.leeInt();
-			System.out.println("El resultado es" +  Restar(a,b));
+			array = pedir2numeros();
+			System.out.println("El resultado es" +  Restar(array[0],array[1]));
 			break;	
 		
 		case 3:
 			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("Introduce valor para b");
-			b = Consola.leeInt();
-			System.out.println("El resultado es" +  Multiplicar(a,b));
+			array = pedir2numeros();
+			System.out.println("El resultado es" +  Multiplicar(array[0],array[1]));
 			break;	
 		
 		case 4:
 			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("Introduce valor para b");
-			b = Consola.leeInt();
+			array = pedir2numeros();
 			try {
-				System.out.println("El resultado es" +  Dividir(a,b));
+				System.out.println("El resultado es" +  Dividir(array[0],array[1]));
 			}
 			catch (ErrorDivision0 e) {
 				System.err.println(e.getMessage());
@@ -90,49 +77,70 @@ private static void LanzarMenu() throws ErrorDivision0 {
 			break;	
 		
 		case 5:
-			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("El resultado es" +  RaizCuadrada(a));
+
+			System.out.println("El resultado es" +  RaizCuadrada(pedir1numero()));
 			break;	
 			
 		case 6:
 			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("El resultado es" +  Binario(a));
+			System.out.println("El resultado es" +  Binario(pedir1numero()));
 			break;	
 			
 		case 7:
-			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("El resultado es" +  Absoluto(a));
+
+			System.out.println("El resultado es" +  Absoluto(pedir1numero()));
 			break;	
 			
 			
 		case 8:
 			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("Introduce valor para b");
-			b = Consola.leeInt();
-			System.out.println("El resultado es" +  Logaritmo(a,b));
+			array = pedir2numeros();
+			System.out.println("El resultado es" +  Logaritmo(array[0],array[1]));
 			break;	
 			
 		case 9:
 			
-			System.out.println("Introduce valor para a");
-			a = Consola.leeInt();
-			System.out.println("Introduce valor para b");
-			b = Consola.leeInt();
-			System.out.println("El resultado es" +  Factorial(a));
+			System.out.println("El resultado es" +  Factorial(pedir1numero()));
 			break;		
 		default:
 			resp=10;
 			break;
 		}
 	}while(resp!=10);
+}
+
+/**
+ * Metodo que pide 2 numeros
+ * @author Rodrigo
+ * @return array con los numeros pedidos
+ */
+private static int[] pedir2numeros() {
+	int[] arraynumeros =new int[2];
+	
+	System.out.println("Introduce valor para a");
+	arraynumeros[0] = Consola.leeInt();
+	System.out.println("Introduce valor para b");
+	arraynumeros[0] = Consola.leeInt();
+	
+	
+	return arraynumeros;
+	
+}
+
+/**
+ * Metodo que pide 1 numero
+ * @author Rodrigo
+ * @return el numero pedido
+ */
+private static int pedir1numero() {
+	
+	System.out.println("Introduce valor para a");
+	int num = Consola.leeInt();
+
+	
+	
+	return num;
+	
 }
 /**
  * Metodo que eleva un n a la m
@@ -177,7 +185,7 @@ public static double Absoluto(double n)
 }
   
  /**
- * Realiza la suma entre dos n�meros
+ * Realiza la suma entre dos numeros
  * @author Rodrigo
  * @param n numero que se sumara a m
  * @param m numero que se sumara a n
@@ -190,7 +198,7 @@ public static double Sumar(double n,double m) {
 }
 
 /**
-* Realiza la resta entre dos n�meros
+* Realiza la resta entre dos numeros
 * @author Rodrigo
 * @param n numero al que se le restara m
 * @param m numero que sera restado a n
@@ -203,7 +211,7 @@ public static double Restar(double n,double m) {
 }
 
 /**
-* Realiza la multiplicacion entre dos n�meros
+* Realiza la multiplicacion entre dos numeros
 * @author Rodrigo
 * @param n numero que se multiplicara por m
 * @param m numero que se multiplicara por n
@@ -216,7 +224,7 @@ public static double Multiplicar(double n,double m) {
 }
 
 /**
- * Realiza la divisi�n entre dos n�meros.
+ * Realiza la division entre dos numeros.
  * Lanza excepcion cuando el divisor es 0
  * @author Rodrigo
  * @param n dividendo

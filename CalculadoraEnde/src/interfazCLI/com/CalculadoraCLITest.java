@@ -21,7 +21,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 class CalculadoraCLITest {
 	
 	/**
-	 * Test número 1 sobre el método suma
+	 * Test número 1 sobre el metodo suma
 	 * @author Rodrigo
 	 *
 	 */
@@ -34,7 +34,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 2 sobre el método suma, fallo
+	 * Test numero 2 sobre el metodo suma, fallo
 	 * @author Rodrigo
 	 *
 	 */
@@ -46,7 +46,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método resta
+	 * Test numero 1 sobre el metodo resta
 	 * @author gian piero
 	 *
 	 */
@@ -58,7 +58,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método resta, fallo
+	 * Test numero 1 sobre el metodo resta, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -70,7 +70,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método dividir
+	 * Test numero 1 sobre el metodo dividir
 	 * @author Rodrigo
 	 *
 	 */
@@ -90,7 +90,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 2 sobre el método dividir, fallo
+	 * Test numero 2 sobre el metodo dividir, fallo
 	 * @author Rodrigo
 	 *
 	 */
@@ -106,7 +106,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método elevar
+	 * Test numero 1 sobre el metodo elevar
 	 * @author gian piero
 	 *
 	 */
@@ -117,7 +117,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 2 sobre el método elevar, fallo
+	 * Test numero 2 sobre el metodo elevar, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -143,7 +143,7 @@ class CalculadoraCLITest {
 	
 
 	/**
-	 * Test número 1 sobre el método multiplicar
+	 * Test numero 1 sobre el metodo multiplicar
 	 * @author gian piero
 	 *
 	 */
@@ -154,7 +154,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 2 sobre el método multiplicar, fallo
+	 * Test numero 2 sobre el metodo multiplicar, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -168,7 +168,7 @@ class CalculadoraCLITest {
 
 	
 	/**
-	 * Test número 1 sobre el método raiz cuadrada
+	 * Test numero 1 sobre el metodo raiz cuadrada
 	 * @author gian piero
 	 *
 	 */
@@ -179,7 +179,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 2 sobre el método raiz cuadrada, fallo
+	 * Test numero 2 sobre el metodo raiz cuadrada, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -192,7 +192,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 1 sobre el método binario
+	 * Test numero 1 sobre el metodo binario
 	 * @author gian piero
 	 *
 	 */
@@ -203,7 +203,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 * Test número 1 sobre el método binario, fallo
+	 * Test numero 1 sobre el metodo binario, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -218,7 +218,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 1 sobre el método calcular valor absoluto
+	 * Test numero 1 sobre el metodo calcular valor absoluto
 	 * @author gian piero
 	 *
 	 */
@@ -229,7 +229,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 *  Test número 1 sobre el método calcular valor absoluto, fallo
+	 *  Test numero 1 sobre el metodo calcular valor absoluto, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -239,74 +239,10 @@ class CalculadoraCLITest {
 		assertNotEquals(-4.0, solucion);
 	}
 	
-	
-	
-
-	/**
-	 * Test número 1 sobre el método suma
-	 * @author Rodrigo
-	 *
-	 */
-	@Test
-	void testSumar1() {
-		double solucion = CalculadoraCLI.Sumar(2.0,1.0);
-		
-		assertEquals(3.0, solucion);
-	}
-	
-	
-	/**
-	 * Test número 2 sobre el método suma, fallo
-	 * @author Rodrigo
-	 *
-	 */
-	@Test
-	void testSumar2() {
-		double solucion = CalculadoraCLI.Sumar(3.0,1.0);
-		
-		assertEquals(3.0, solucion);
-	}
-	
-	/**
-	 * Test número 1 sobre el método dividir
-	 * @author Rodrigo
-	 *
-	 */
-	@Test
-	void testDividir1() {
-		double solucion;
-		try {
-			solucion = CalculadoraCLI.Dividir(2.0,1.0);
-			assertEquals(3.0, solucion);
-		} catch (ErrorDivision0 e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
-	
-	
-	/**
-	 * Test número 2 sobre el método dividir, fallo
-	 * @author Rodrigo
-	 *
-	 */
-	@Test
-	void testDividir2() {
-		
-		try {
-			assertEquals("Division por 0.", CalculadoraCLI.Dividir(3.0,0));
-		} catch (ErrorDivision0 e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 
 
 	/**
-	 * Test número 1 sobre el método calcular el logaritmo
+	 * Test nu�mero 1 sobre el metodo calcular el logaritmo
 	 * @author gian piero
 	 *
 	 */
@@ -317,7 +253,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 *  Test número 1 sobre el método calcular  el logaritmo, fallo
+	 *  Test numero 1 sobre el metodo calcular  el logaritmo, fallo
 	 * @author gian piero
 	 *
 	 */
@@ -331,7 +267,7 @@ class CalculadoraCLITest {
 	
 	
 	/**
-	 * Test número 1 sobre el método calcular el factorial
+	 * Test numero 1 sobre el metodo calcular el factorial
 	 * @author gian piero
 	 *
 	 */
@@ -342,7 +278,7 @@ class CalculadoraCLITest {
 	}
 	
 	/**
-	 *  Test número 1 sobre el método calcular  el factorial, fallo
+	 *  Test numero 1 sobre el metodo calcular  el factorial, fallo
 	 * @author gian piero
 	 *
 	 */
