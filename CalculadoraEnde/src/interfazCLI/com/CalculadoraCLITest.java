@@ -248,8 +248,14 @@ class CalculadoraCLITest {
 	 */
 	@Test
 	void testLogaritmo1() {
-		double solucion = CalculadoraCLI.Logaritmo(2.0,8.0);
-		assertEquals(3.0, solucion);
+		double solucion;
+		try {
+			solucion = CalculadoraCLI.Logaritmo(2.0,8.0);
+			assertEquals(3.0, solucion);
+		} catch (ErrorDivision0 e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -259,8 +265,15 @@ class CalculadoraCLITest {
 	 */
 	@Test
 	void testLogaritmo2() {
-		double solucion = CalculadoraCLI.Logaritmo(2.0,8.0);
-		assertNotEquals(3.1, solucion);
+		double solucion;
+		try {
+			solucion = CalculadoraCLI.Logaritmo(2.0,8.0);
+			assertNotEquals(3.1, solucion);
+		} catch (ErrorDivision0 e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	

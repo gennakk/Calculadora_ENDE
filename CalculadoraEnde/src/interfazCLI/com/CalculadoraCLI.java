@@ -33,7 +33,7 @@ private static void LanzarMenu() throws ErrorDivision0 {
 	int a=0;
 	int b=0;
 	int resp;
-	int[] array;
+	double[] array;
 	do{
 		System.out.println("Bienvenido a la calculadora");
 		System.out.println("1-SUMAR");
@@ -114,13 +114,13 @@ private static void LanzarMenu() throws ErrorDivision0 {
  * @author Rodrigo
  * @return array con los numeros pedidos
  */
-private static int[] pedir2numeros() {
-	int[] arraynumeros =new int[2];
+private static double[] pedir2numeros() {
+	double[] arraynumeros =new double[2];
 	
 	System.out.println("Introduce valor para a");
 	arraynumeros[0] = Consola.leeInt();
 	System.out.println("Introduce valor para b");
-	arraynumeros[0] = Consola.leeInt();
+	arraynumeros[1] = Consola.leeInt();
 	
 	
 	return arraynumeros;
@@ -132,7 +132,7 @@ private static int[] pedir2numeros() {
  * @author Rodrigo
  * @return el numero pedido
  */
-private static int pedir1numero() {
+private static double pedir1numero() {
 	
 	System.out.println("Introduce valor para a");
 	int num = Consola.leeInt();
@@ -247,10 +247,14 @@ public static double Dividir(double n,double m) throws ErrorDivision0{
  * @param n numero del logaritmo
  * @param m base del logaritmo
  * @return resultado de realizar el logaritmo de n con base m
+ * @throws ErrorDivision0 
  */
-public static double Logaritmo(double n,double m) {
+public static double Logaritmo(double n,double m) throws ErrorDivision0 {
 	
 	System.out.println("Yo hago el logaritmo de dos operadores");
+	if(Math.log(m)==0)
+		throw new ErrorDivision0("Division por 0.");
+
 	
 	return Math.log(n) / Math.log(m);
 	
